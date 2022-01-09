@@ -1,0 +1,217 @@
+@charset "utf-8";
+html {
+    font-size: 62.5%;
+}
+
+html,body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+
+body{
+    position: relative;
+    max-width: 1300px;
+    min-width: 300px;
+    background-color:rgb(247, 245, 207);
+    box-sizing: border-box;
+    font-size: 1.8rem;
+}
+
+#main_title h1 {
+    font-family: 'RocknRoll One', sans-serif;
+    font-size: 2.6rem;
+    text-align: center;
+}
+
+li {
+    list-style: none;
+
+}
+/* カード並列箇所 */
+#wrapper {
+    position: absolute;
+    top: 100px;
+    left: 50px;
+    display: flex;
+    width: 100%;
+}
+
+#card {
+    position: relative;
+    width: 60%;
+}
+
+#card_list {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    padding-left: 0;
+}
+
+.card_back {
+    flex: 0 0 auto;
+    width: 7.6%;
+    cursor: pointer;
+    border: 1px solid #000;
+    box-sizing: border-box;
+    display: block;
+    position: relative;
+}
+
+img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.card_opened {
+    pointer-events: none;
+}
+
+.card_remove {
+    opacity: 0;
+    pointer-events: none;
+}
+/* ここまでカード並列箇所 */
+
+/* サイドバー */
+#side {
+    width: 40%;
+    text-align:center;
+    font-weight: bold   ;
+}
+
+#count_bar {
+    width: 50%;
+    margin: 0 auto;
+}
+
+#count_bar .w_border {
+    border: solid 1px rgb(158, 154, 154);
+    padding: 5px;
+}
+
+.number,.hit,.off,.sheet,#log,#start_btn {
+    margin: 10px 0 10px 0;
+}
+
+#log {
+    margin: 0 auto;
+    width: 70%;
+    padding: 10px;
+    border: solid 1px rgb(158, 154, 154);
+    overflow: scroll;
+    height: 150px;
+}
+
+.number,.hit,.false,.sheet {
+    display: flex;
+    justify-content: space-between;
+    align-items: center
+}
+/* ここまでサイドバー*/
+
+@media screen and (max-width:959px) { 
+    /*画面サイズが960px未満の場合に適用 タブレット*/
+    body {
+        font-size: 1.5rem;
+    }
+
+    #main_title h1 {
+        font-size: 2rem;
+    }
+
+    /* カード並列箇所 */
+    #wrapper {
+        top: initial;
+        left: 10px;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    #card {
+        width: 100%;
+    }
+    /*ここまでカード並列箇所 */
+
+     /* サイドバーcss */
+    #side {
+        width: 50%;
+    }
+
+    #log {
+        height: 100px;
+    }
+    /* ここまでサイドバーcss */
+    
+}
+
+@media screen and (max-width:670px){    
+    /*画面サイズが960px未満の場合に適用 スマホ*/
+    #main_title h1 {
+        font-size: 0;
+    }
+
+    #main_title h1:before {
+        white-space: pre;
+        font-size: 1.8rem;
+        content: '神経衰弱\AMemory weakness playing cards';
+    }
+
+    /* カード並列箇所 */
+    #wrapper {
+        position: initial;
+        display: block;
+        width: 80%;
+    }
+
+    #card {
+        width: 100%;
+    }
+
+    #card_list {
+        position: initial;
+        transform: none;
+    }
+    /*ここまでカード並列箇所 */
+
+    /* サイドバー*/
+    #side {
+        width: 100%;
+        display: block;
+    }
+
+    #count_bar {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        justify-content: space-around;
+    }
+
+    .number,.hit,.false,.sheet {
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    #log {
+        height: 80px;
+    }
+
+    .card_turn {
+        font-size: 0;
+    }
+
+    .card_turn:before {
+        font-size: 1.6rem;
+        content:'めくった回数';
+    }
+    /* ここまでサイドバー*/
+}
+    
+    
+    
